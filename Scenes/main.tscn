@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6umuero4euoj"]
+
+[ext_resource type="Texture2D" uid="uid://cr2edsm1onand" path="res://icon.svg" id="1_x7uua"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ssjdn"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+gravity_scale = 0.07
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("SphereShape3D_ssjdn")
+
+[node name="Sprite3D" type="Sprite3D" parent="RigidBody3D"]
+texture = ExtResource("1_x7uua")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.02715)
