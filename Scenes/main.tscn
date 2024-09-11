@@ -1,13 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6umuero4euoj"]
+[gd_scene load_steps=6 format=3 uid="uid://c6umuero4euoj"]
 
+[ext_resource type="Script" path="res://Scripts/rigid_body_3d.gd" id="1_ec3xf"]
 [ext_resource type="Texture2D" uid="uid://cr2edsm1onand" path="res://icon.svg" id="1_x7uua"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ssjdn"]
 
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_h4jkp"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_63vyw"]
+size = Vector2(100, 100)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
-gravity_scale = 0.07
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_ec3xf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 shape = SubResource("SphereShape3D_ssjdn")
@@ -16,4 +23,16 @@ shape = SubResource("SphereShape3D_ssjdn")
 texture = ExtResource("1_x7uua")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.02715)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.7958)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_h4jkp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("PlaneMesh_63vyw")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.638056, 0.76999, 0, -0.76999, 0.638056, 0, 3.27678, 2.29072)
