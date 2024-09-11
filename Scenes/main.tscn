@@ -1,9 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6umuero4euoj"]
+[gd_scene load_steps=5 format=3 uid="uid://c6umuero4euoj"]
 
-[ext_resource type="Script" path="res://Scripts/rigid_body_3d.gd" id="1_ec3xf"]
-[ext_resource type="Texture2D" uid="uid://cr2edsm1onand" path="res://icon.svg" id="1_x7uua"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_ssjdn"]
+[ext_resource type="PackedScene" uid="uid://dho1yxqxxkqv3" path="res://Scenes/airplane.tscn" id="1_8o1ir"]
+[ext_resource type="Script" path="res://Scripts/airplane.gd" id="2_tnxyh"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_h4jkp"]
 
@@ -12,18 +10,12 @@ size = Vector2(100, 100)
 
 [node name="Node3D" type="Node3D"]
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-script = ExtResource("1_ec3xf")
+[node name="Airplane" parent="." instance=ExtResource("1_8o1ir")]
+transform = Transform3D(0.975528, -0.154509, 0.156434, 0.156434, 0.987688, 0, -0.154509, 0.0244717, 0.987688, 0, 0, 0)
+script = ExtResource("2_tnxyh")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-shape = SubResource("SphereShape3D_ssjdn")
-
-[node name="Sprite3D" type="Sprite3D" parent="RigidBody3D"]
-texture = ExtResource("1_x7uua")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.7958)
+[node name="Camera3D" type="Camera3D" parent="Airplane"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18191, 5.7958)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
