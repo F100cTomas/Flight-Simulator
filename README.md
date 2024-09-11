@@ -1,3 +1,2 @@
 # Flight-Simulator
-This is a Godot project.
-This is another line.
+Já nemám ani už sílu tohleto hrát popravdě.
