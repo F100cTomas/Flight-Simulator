@@ -1,21 +1,35 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6umuero4euoj"]
+[gd_scene load_steps=8 format=3 uid="uid://c6umuero4euoj"]
 
 [ext_resource type="PackedScene" uid="uid://dho1yxqxxkqv3" path="res://Scenes/airplane.tscn" id="1_8o1ir"]
-[ext_resource type="Script" path="res://Scripts/airplane.gd" id="2_tnxyh"]
+
+[sub_resource type="Environment" id="Environment_mq07e"]
+background_mode = 1
+background_color = Color(0.437799, 0.616361, 1, 1)
+background_energy_multiplier = 0.9
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.37
+reflected_light_source = 1
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_h4jkp"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_63vyw"]
-size = Vector2(100, 100)
+size = Vector2(10000, 10000)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kcmwi"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bbgob"]
+size = Vector3(1, 10, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7oxkj"]
+size = Vector3(1, 10, 1)
 
 [node name="Node3D" type="Node3D"]
 
 [node name="Airplane" parent="." instance=ExtResource("1_8o1ir")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-script = ExtResource("2_tnxyh")
 
 [node name="Camera3D" type="Camera3D" parent="Airplane"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18191, 5.7958)
+transform = Transform3D(1, 0, 0, 0, 0.97722, 0.212229, 0, -0.212229, 0.97722, 0, 2.34362, 6.67472)
+environment = SubResource("Environment_mq07e")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
@@ -28,3 +42,15 @@ mesh = SubResource("PlaneMesh_63vyw")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.638056, 0.76999, 0, -0.76999, 0.638056, 0, 3.27678, 2.29072)
+light_energy = 0.848
+shadow_enabled = true
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.50908, 4.34159, -8.42655)
+physics_material_override = SubResource("PhysicsMaterial_kcmwi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("BoxMesh_bbgob")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("BoxShape3D_7oxkj")
