@@ -54,3 +54,13 @@ mesh = SubResource("BoxMesh_bbgob")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 shape = SubResource("BoxShape3D_7oxkj")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.68216, 0.322586, -0.0986309)
+physics_material_override = SubResource("PhysicsMaterial_kcmwi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D/RigidBody3D"]
+mesh = SubResource("BoxMesh_bbgob")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/RigidBody3D"]
+shape = SubResource("BoxShape3D_7oxkj")

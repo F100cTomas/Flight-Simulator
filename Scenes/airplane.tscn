@@ -1,19 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://dho1yxqxxkqv3"]
+[gd_scene load_steps=5 format=3 uid="uid://dho1yxqxxkqv3"]
 
-[ext_resource type="Texture2D" uid="uid://7ltkd3lnx36p" path="res://Assets/Textures/spitfire.jpg" id="1_e23q5"]
 [ext_resource type="Script" path="res://Scripts/airplane.gd" id="1_xfbqw"]
+[ext_resource type="PackedScene" uid="uid://b6dp5nst6yk7b" path="res://Assets/Models/DuchKieva1.glb" id="2_35etw"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_mvmcs"]
-height = 1.0
-radius = 1.0
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jfq8h"]
+height = 4.375
+radius = 0.99
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_se31n"]
+size = Vector3(4.93335, 2.13257, 0.802734)
 
 [node name="Airplane" type="CharacterBody3D"]
 script = ExtResource("1_xfbqw")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.996799, -0.0382124, 0.0702256, 0.0269315, 0.987534, 0.155083, -0.0752762, -0.152695, 0.985402, 0, 0, 0)
-shape = SubResource("CylinderShape3D_mvmcs")
+[node name="DuchKieva1" parent="." instance=ExtResource("2_35etw")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.642872, 0)
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-texture = ExtResource("1_e23q5")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.721423, 0)
+shape = SubResource("CylinderShape3D_jfq8h")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012085, 0.639282, -1.56836)
+shape = SubResource("BoxShape3D_se31n")
