@@ -11,7 +11,7 @@ size = Vector2(100, 100)
 [node name="Node3D" type="Node3D"]
 
 [node name="Airplane" parent="." instance=ExtResource("1_8o1ir")]
-transform = Transform3D(0.975528, -0.154509, 0.156434, 0.156434, 0.987688, 0, -0.154509, 0.0244717, 0.987688, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("2_tnxyh")
 
 [node name="Camera3D" type="Camera3D" parent="Airplane"]
