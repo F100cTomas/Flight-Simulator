@@ -2,14 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://xnh0vdk8rfp5" path="res://Scenes/rocket.tscn" id="1_e1ykn"]
 [ext_resource type="PackedScene" uid="uid://d1vhm22177j2n" path="res://Scenes/box.tscn" id="2_c5y16"]
-
-[sub_resource type="Environment" id="Environment_mq07e"]
-background_mode = 1
-background_color = Color(0.437799, 0.616361, 1, 1)
-background_energy_multiplier = 0.9
-ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 0.37
-reflected_light_source = 1
+[ext_resource type="PackedScene" uid="uid://dlucu1r53ndai" path="res://Scenes/camera.tscn" id="2_wwj5v"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_h4jkp"]
 
@@ -20,9 +13,7 @@ size = Vector2(10000, 10000)
 
 [node name="Airplane" parent="." instance=ExtResource("1_e1ykn")]
 
-[node name="Camera3D" type="Camera3D" parent="Airplane"]
-transform = Transform3D(1, 0, 0, 0, 0.97722, 0.212229, 0, -0.212229, 0.97722, 0, 2.34362, 6.67472)
-environment = SubResource("Environment_mq07e")
+[node name="Camera" parent="Airplane" instance=ExtResource("2_wwj5v")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
