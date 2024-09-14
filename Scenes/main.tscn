@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c6umuero4euoj"]
 
-[ext_resource type="PackedScene" uid="uid://dho1yxqxxkqv3" path="res://Scenes/airplane.tscn" id="1_8o1ir"]
+[ext_resource type="PackedScene" uid="uid://xnh0vdk8rfp5" path="res://Scenes/rocket.tscn" id="1_e1ykn"]
 [ext_resource type="PackedScene" uid="uid://d1vhm22177j2n" path="res://Scenes/box.tscn" id="2_c5y16"]
 
 [sub_resource type="Environment" id="Environment_mq07e"]
@@ -18,7 +18,7 @@ size = Vector2(10000, 10000)
 
 [node name="Node3D" type="Node3D"]
 
-[node name="Airplane" parent="." instance=ExtResource("1_8o1ir")]
+[node name="Airplane" parent="." instance=ExtResource("1_e1ykn")]
 
 [node name="Camera3D" type="Camera3D" parent="Airplane"]
 transform = Transform3D(1, 0, 0, 0, 0.97722, 0.212229, 0, -0.212229, 0.97722, 0, 2.34362, 6.67472)
