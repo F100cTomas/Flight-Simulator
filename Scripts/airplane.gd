@@ -73,7 +73,7 @@ func _physics_process(delta: float) -> void:
 			var body = get_slide_collision(i).get_collider()
 			if body is RigidBody3D:
 				destroy(body)
-				var cam: Camera3D = $Camera3D
-				remove_child(cam)
-				$"..".add_child(cam)
-				destroy(self)
+				# var cam: Camera3D = $Camera3D
+				# remove_child(cam)
+				# $"..".add_child(cam)
+				# destroy(self)

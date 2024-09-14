@@ -41,22 +41,49 @@ shadow_enabled = true
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 
 [node name="Box" parent="." instance=ExtResource("2_c5y16")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2137, 11.8191, -9.95882)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.560989, 12.8344, -65.6517)
+gravity_scale = 0.0
 
 [node name="Box2" parent="." instance=ExtResource("2_c5y16")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4317, 11.8191, -9.96921)
-
-[node name="Box4" parent="." instance=ExtResource("2_c5y16")]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -8.88178e-16, 0, 1, -6.2137, 1.41576, -72.1691)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.560989, 58.213, -65.6517)
+gravity_scale = 0.0
 
 [node name="Box3" parent="." instance=ExtResource("2_c5y16")]
-transform = Transform3D(-1.35076e-08, 0.309017, 0.951057, -1, -4.37114e-08, -8.88178e-16, 4.1572e-08, -0.951057, 0.309017, 12.1398, 1.41575, -85.4317)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.560989, 35.9225, -121.493)
+gravity_scale = 0.0
+
+[node name="Box4" parent="." instance=ExtResource("2_c5y16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.560989, 81.301, -121.493)
+gravity_scale = 0.0
 
 [node name="Box5" parent="." instance=ExtResource("2_c5y16")]
-transform = Transform3D(3.53633e-08, -0.809017, 0.587785, -1, -4.37114e-08, 0, 2.56929e-08, -0.587785, -0.809017, 4.74711, 1.41575, -107.672)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.560989, 11.9788, -184.39)
+gravity_scale = 0.0
 
 [node name="Box6" parent="." instance=ExtResource("2_c5y16")]
-transform = Transform3D(-1.35076e-08, 0.309017, -0.951057, -1, -4.37114e-08, 0, -4.1572e-08, 0.951057, 0.309017, -25.2578, 1.41575, -85.6526)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.560989, 57.3574, -184.39)
+gravity_scale = 0.0
 
 [node name="Box7" parent="." instance=ExtResource("2_c5y16")]
-transform = Transform3D(3.53633e-08, -0.809017, -0.587785, -1, -4.37114e-08, 0, -2.56929e-08, 0.587785, -0.809017, -18.5711, 1.41575, -107.883)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.560989, 24.905, -250.774)
+gravity_scale = 0.0
+
+[node name="Box8" parent="." instance=ExtResource("2_c5y16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.560989, 70.2835, -250.774)
+gravity_scale = 0.0
+
+[node name="Box9" parent="." instance=ExtResource("2_c5y16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.560989, 58.3659, -343.599)
+gravity_scale = 0.0
+
+[node name="Box10" parent="." instance=ExtResource("2_c5y16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.560989, 103.744, -343.599)
+gravity_scale = 0.0
+
+[node name="Box11" parent="." instance=ExtResource("2_c5y16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.560989, 24.0435, -452.797)
+gravity_scale = 0.0
+
+[node name="Box12" parent="." instance=ExtResource("2_c5y16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.560989, 69.422, -452.797)
+gravity_scale = 0.0
