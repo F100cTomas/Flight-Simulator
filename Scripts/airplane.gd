@@ -37,6 +37,27 @@ func rot(delta: float) -> void:
 	rotate(global_basis.y, Input.get_axis("Yaw Right", "Yaw Left") * delta)
 	rotate(global_basis.z, Input.get_axis("Roll Clockwise", "Roll Counter-Clockwise") * delta)
 
+func destroy(object) -> void:
+	if object is RigidBody3D:
+		for b in object.get_colliding_bodies():
+			b.wake_up()
+	var particles : GPUParticles3D = get_particles()
+	particles.position = object.position
+	object.add_sibling(particles)
+	object.queue_free()
+	var timer: Timer = Timer.new()
+	timer.wait_time = 0.5
+	timer.one_shot = true
+	var timeout = func() -> void:
+		particles.queue_free()
+	timer.connect("timeout", timeout)
+	particles.add_child(timer)
+	var audio_player: AudioStreamPlayer3D = AudioStreamPlayer3D.new()
+	audio_player.stream = EXPLOSION
+	particles.add_child(audio_player)
+	timer.start()
+	audio_player.play()
+
 func _physics_process(delta: float) -> void:
 	rot(delta)
 	if not is_on_floor():
@@ -51,21 +72,8 @@ func _physics_process(delta: float) -> void:
 		for i in get_slide_collision_count():
 			var body = get_slide_collision(i).get_collider()
 			if body is RigidBody3D:
-				for b in body.get_colliding_bodies():
-					b.wake_up()
-				var particles : GPUParticles3D = get_particles()
-				particles.position = body.position
-				body.add_sibling(particles)
-				body.queue_free()
-				var timer: Timer = Timer.new()
-				timer.wait_time = 0.5
-				timer.one_shot = true
-				var timeout = func() -> void:
-					particles.queue_free()
-				timer.connect("timeout", timeout)
-				particles.add_child(timer)
-				var audio_player: AudioStreamPlayer3D = AudioStreamPlayer3D.new()
-				audio_player.stream = EXPLOSION
-				particles.add_child(audio_player)
-				timer.start()
-				audio_player.play()
+				destroy(body)
+				var cam: Camera3D = $Camera3D
+				remove_child(cam)
+				$"..".add_child(cam)
+				destroy(self)
