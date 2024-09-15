@@ -1,10 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://dlucu1r53ndai"]
+[gd_scene load_steps=3 format=3 uid="uid://dlucu1r53ndai"]
 
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="1_4l22a"]
+[ext_resource type="Environment" uid="uid://44ruix1xik4t" path="res://default_env.tres" id="2_4e4ph"]
 
 [node name="Camera" type="Node3D"]
+top_level = true
 script = ExtResource("1_4l22a")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.40067)
+environment = ExtResource("2_4e4ph")
 fov = 90.0

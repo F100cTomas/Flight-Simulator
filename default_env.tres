@@ -1,7 +1,8 @@
-[gd_resource type="Environment" load_steps=2 format=2]
+[gd_resource type="Environment" load_steps=2 format=3 uid="uid://44ruix1xik4t"]
 
-[sub_resource type="Sky" id=1]
+[sub_resource type="Sky" id="Sky_saiku"]
 
 [resource]
-background_mode = 2
-background_sky = SubResource( 1 )
+background_mode = 1
+background_color = Color(0.379009, 0.572699, 1, 1)
+sky = SubResource("Sky_saiku")
