@@ -28,6 +28,9 @@ func _input(event: InputEvent) -> void:
 		is_locked = not is_locked
 		if is_locked:
 			og_parent_rotation = get_parent().global_rotation
+		else:
+			var relative_lock_rotation: Vector3 = get_parent().global_rotation - og_parent_rotation
+			og_cam_rotation += Vector3(relative_lock_rotation.x, relative_lock_rotation.y, 0.0)
 	if Input.is_action_pressed("Reset Camera"):
 		$Camera3D.position = Vector3(0.0, 0.0, DEFAULT_ZOOM)
 		$Camera3D.rotation = Vector3(0.0, 0.0, 0.0)
