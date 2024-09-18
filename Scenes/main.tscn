@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6umuero4euoj"]
+[gd_scene load_steps=7 format=3 uid="uid://c6umuero4euoj"]
 
-[ext_resource type="PackedScene" uid="uid://xnh0vdk8rfp5" path="res://Scenes/rocket.tscn" id="1_e1ykn"]
+[ext_resource type="PackedScene" uid="uid://bg4v10v6530sv" path="res://Scenes/spacecraft.tscn" id="1_ee1dg"]
 [ext_resource type="PackedScene" uid="uid://d1vhm22177j2n" path="res://Scenes/box.tscn" id="2_c5y16"]
+[ext_resource type="PackedScene" uid="uid://dnurwworwb4xa" path="res://Scenes/spacecraft/duch_kieva.tscn" id="2_dvytm"]
 [ext_resource type="PackedScene" uid="uid://dlucu1r53ndai" path="res://Scenes/camera.tscn" id="2_wwj5v"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_h4jkp"]
@@ -11,9 +12,11 @@ size = Vector2(10000, 10000)
 
 [node name="Node3D" type="Node3D"]
 
-[node name="Airplane" parent="." instance=ExtResource("1_e1ykn")]
+[node name="Spacecraft" parent="." instance=ExtResource("1_ee1dg")]
 
-[node name="Camera" parent="Airplane" instance=ExtResource("2_wwj5v")]
+[node name="DuchKieva" parent="Spacecraft" instance=ExtResource("2_dvytm")]
+
+[node name="Camera" parent="Spacecraft" instance=ExtResource("2_wwj5v")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)

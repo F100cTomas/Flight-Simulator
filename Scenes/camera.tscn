@@ -8,6 +8,6 @@ top_level = true
 script = ExtResource("1_4l22a")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.40067)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
 environment = ExtResource("2_4e4ph")
 fov = 90.0
